@@ -8,24 +8,22 @@ import jakarta.persistence.GenerationType;
 
 @Entity
 public class Book {
-    @Id     
-    @GeneratedValue(strategy= GenerationType.AUTO)   
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
     private String author;
-    private int publicationYear;
     private String isbn;
-    private double price;
+    private int publicationYear;
 
     public Book() {
     }
 
-    public Book(String title, String author, int publicationYear, String isbn, double price) {
+    public Book(String title, String author, String isbn, int publicationYear) {
         this.title = title;
         this.author = author;
-        this.publicationYear = publicationYear;
         this.isbn = isbn;
-        this.price = price;
+        this.publicationYear = publicationYear;
     }
 
     public Long getId() {
@@ -52,14 +50,6 @@ public class Book {
         this.author = author;
     }
 
-    public int getPublicationYear() {
-        return publicationYear;
-    }
-
-    public void setPublicationYear(int publicationYear) {
-        this.publicationYear = publicationYear;
-    }
-
     public String getIsbn() {
         return isbn;
     }
@@ -68,12 +58,12 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public double getPrice() {
-        return price;
+    public int getPublicationYear() {
+        return publicationYear;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPublicationYear(int publicationYear) {
+        this.publicationYear = publicationYear;
     }
 
 }

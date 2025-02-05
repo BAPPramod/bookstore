@@ -12,7 +12,7 @@ import fi.haagahelia.bookstore.domain.Book;
 @Controller
 public class BookController {
 
-    @GetMapping("/index")
+    /* @GetMapping("/index")
     public String showBookList(Model model) {
         List<Book> books = new ArrayList<>();
         books.add(new Book("Sample", "Sample", 2020, "1234567", 30.99));
@@ -21,7 +21,7 @@ public class BookController {
         model.addAttribute("books", books);
 
         return "index";
-    }
+    } */
 
 
  /* @RequestMapping("/index")
