@@ -16,13 +16,12 @@ public class BookstoreApplication {
 	}
 
 	@Bean
-    public CommandLineRunner demo(BookRepository repository) {
-        return (args) -> {
-            repository.save(new Book("A Farewell to Arms", "Ernest Hemingway", "1232323-21", 1929));
-            repository.save(new Book("Animal Farm", "George Orwell", "2212343-5", 1945));
-            System.out.println("Sample books added!");	
-        };
-    }
+	public CommandLineRunner demo(BookRepository repository) {
+		return (args) -> {
+			repository.save(new Book("A Farewell to Arms", "Ernest Hemingway", "1232323-21", 1929));
+			repository.save(new Book("Animal Farm", "George Orwell", "2212343-5", 1945));
+			System.out.println("Sample books added!");
+		};
+	}
 
 }
-	

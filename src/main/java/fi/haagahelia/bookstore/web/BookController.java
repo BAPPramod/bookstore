@@ -5,6 +5,10 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import fi.haagahelia.bookstore.domain.Book;
 import fi.haagahelia.bookstore.domain.BookRepository;
@@ -25,22 +29,24 @@ public class BookController {
         return "booklist";
     }
 
+    @GetMapping("/addbook")
+    public String showAddBookForm() {
+        return "addbook";
+    }
 
+    @PostMapping("/addbook")
+    public String addBook(@RequestParam String title,
+            @RequestParam String author,
+            @RequestParam String isbn,
+            @RequestParam int publicationYear) {
+        Book book = new Book(title, author, isbn, publicationYear);
+        bookRepository.save(book);
+        return "redirect:/booklist";
+    }
 
-    /* @GetMapping("/index")
-    public String showBookList(Model model) {
-        List<Book> books = new ArrayList<>();
-        books.add(new Book("Sample", "Sample", 2020, "1234567", 30.99));
-        books.add(new Book("Sample", "Sample", 2022, "3267899", 29.99));
-
-        model.addAttribute("books", books);
-
-        return "index";
-    } */
-
-
- /* @RequestMapping("/index")
-    public String index() {
-    return "Welcome to the Bookstore!";
-    } */
+    @RequestMapping("/delete/{id}")
+    public String deleteBook(@PathVariable Long id) {
+        bookRepository.deleteById(id);
+        return "redirect:/booklist";
+    }
 }
