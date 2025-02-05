@@ -3,10 +3,11 @@
 
 <head>
     <title>Edit Book</title>
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-3">
         <h1>Edit Book</h1>
         <form action="#" th:action="@{/update/{id}(id=${book.id})}" th:object="${book}" method="post">
             <input type="hidden" th:field="*{id}" />
