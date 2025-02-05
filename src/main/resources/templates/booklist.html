@@ -25,6 +25,7 @@
                     <td th:text="${book.publicationYear}"></td>
 
                     <td>
+                        <a th:href="@{/edit/{id}(id=${book.id})}" class="btn btn-warning">Edit</a>
                         <a th:href="@{/delete/{id}(id=${book.id})}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
