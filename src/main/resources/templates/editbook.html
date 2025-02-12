@@ -28,6 +28,12 @@
                 <label>Year:</label>
                 <input type="number" th:field="*{publicationYear}" class="form-control" required />
             </div>
+            <div class="mb-3">
+                <label>Category:</label>
+                <select th:field="*{category.id}" class="form-control" required>
+                    <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+                </select>
+            </div>
 
             <button type="submit" class="btn btn-success">Update Book</button>
         </form>

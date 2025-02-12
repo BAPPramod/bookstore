@@ -26,6 +26,12 @@
                 <label>Year:</label>
                 <input type="number" name="publicationYear" class="form-control" required />
             </div>
+            <div class="mb-3">
+                <label>Category:</label>
+                <select name="categoryId" class="form-control" required>
+                    <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+                </select>
+            </div>
             <button type="submit" class="btn btn-success">Add Book</button>
         </form>
         <br>
