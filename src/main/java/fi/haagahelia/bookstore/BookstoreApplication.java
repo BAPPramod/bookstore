@@ -14,6 +14,7 @@ import fi.haagahelia.bookstore.domain.CategoryRepository;
 public class BookstoreApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(BookstoreApplication.class, args);
 	}
 
@@ -21,14 +22,14 @@ public class BookstoreApplication {
 	public CommandLineRunner demo(CategoryRepository categoryRepo, BookRepository repository) {
 		return (args) -> {
 			Category fiction = new Category("Fiction");
-            Category nonFiction = new Category("Non-Fiction");
-            categoryRepo.save(fiction);
-            categoryRepo.save(nonFiction);
+			Category nonFiction = new Category("Non-Fiction");
+			categoryRepo.save(fiction);
+			categoryRepo.save(nonFiction);
 
 			repository.save(new Book("A Farewell to Arms", "Ernest Hemingway", "1232323-21", 1929, fiction));
 			repository.save(new Book("Animal Farm", "George Orwell", "2212343-5", 1945, nonFiction));
-			
-			System.out.println("SSample categories and books added!");
+
+			System.out.println("Sample categories and books added!");
 		};
 	}
 
