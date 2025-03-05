@@ -44,7 +44,7 @@
                         <td>
                             <a th:href="@{/edit/{id}(id=${book.id})}" class="btn btn-warning">Edit</a>
                             <a th:href="@{/delete/{id}(id=${book.id})}" class="btn btn-danger"
-                                th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">Delete</a>
+                                sec:authorize="hasAuthority('ADMIN')">Delete</a>
                         </td>
 
                     </tr>
