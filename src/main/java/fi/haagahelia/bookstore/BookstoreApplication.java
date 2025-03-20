@@ -27,26 +27,24 @@ public class BookstoreApplication {
 			UserRepository userRepository) {
 		return (args) -> {
 
-			
-			  User user1 = new User("user",
-			  "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
-			  "user@bookstore.com", "USER");
-			  User user2 = new User("admin",
-			  "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C",
-			  "admin@bookstore.com", "ADMIN");
-			  userRepository.save(user1);
-			  userRepository.save(user2);
-			  
-			  Category fiction = new Category("Fiction");
-			  Category nonFiction = new Category("Non-Fiction");
-			  categoryRepo.save(fiction);
-			  categoryRepo.save(nonFiction);
-			  
-			  repository.save(new Book("A Farewell to Arms", "Ernest Hemingway",
-			  "1232323-21", 1929, fiction));
-			  repository.save(new Book("Animal Farm", "George Orwell", "2212343-5", 1945,
-			  nonFiction));
-			
+			/* User user1 = new User("user",
+					"$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
+					"user@bookstore.com", "USER");
+			User user2 = new User("admin",
+					"$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C",
+					"admin@bookstore.com", "ADMIN");
+			userRepository.save(user1);
+			userRepository.save(user2);
+
+			Category fiction = new Category("Fiction");
+			Category nonFiction = new Category("Non-Fiction");
+			categoryRepo.save(fiction);
+			categoryRepo.save(nonFiction);
+
+			repository.save(new Book("A Farewell to Arms", "Ernest Hemingway",
+					"1232323-21", 1929, fiction));
+			repository.save(new Book("Animal Farm", "George Orwell", "2212343-5", 1945,
+					nonFiction)); */
 
 			System.out.println("Sample categories and books added!");
 		};
